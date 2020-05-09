@@ -5,7 +5,6 @@ from random import choice
 
 class RandomWalk():
 	#Класс для генерирования случайных блужданий
-
 	def __init__(self, num_points=5000):
 		#Инициализация атрибутов блуждания
 		self.num_points = num_points
@@ -15,7 +14,7 @@ class RandomWalk():
 		self.y_values = [0]
 
 	def fill_walk(self):
-		#Вычисляет точки блуждания
+		#Вычисление точки блуждания
 		#Шаги генерируются до достижения нужной длины
 		while len(self.x_values) < self.num_points:
 			#Определяю направление и длину перемещения
@@ -47,13 +46,10 @@ while True:
 	plt.scatter(rw.x_values, rw.y_values, s=10)
 	plt.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues, s=1)
 
-
 	plt.scatter(0, 0, c='blue', edgecolor='black', s=100)
 	plt.scatter(rw.x_values[-1], rw.y_values[-1], c='red', edgecolor='black', s=100)
 
-
 	plt.show()
-
 	keep_running = input("Построить новое блуждание? (Y/N): ")
 	if keep_running == "n":
 		break
